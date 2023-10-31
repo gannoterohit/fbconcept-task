@@ -12,10 +12,7 @@ class AuthController extends Controller
 {
     
 
-    public function dashbord(){
-
-        return view ('dashbord');
-    }
+   
 
     public function registration_show()
     {
@@ -63,7 +60,7 @@ if ($user) {
     session::put('userid', $user->id);
 // dd("hello");
 // return redirect()->route('post');
-return redirect()->to('post');
+return redirect()->to('home');
    
 } else {
 
@@ -72,17 +69,8 @@ return redirect()->to('post');
 
 }
 
-public function logout  (Request $request)
-{
-    // dd('hello');
-    // Log the user out
-    Auth::logout();
-
-    // Clear the session data
-    $request->session()->invalidate();
-    $request->session()->regenerateToken();
-
-    // Redirect the user to the desired location after logout
-    return redirect('registration');
+public function logout() {
+    session()->flush(); // This will clear all session data
+    return redirect()->to('login');
 }
 }

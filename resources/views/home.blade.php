@@ -64,8 +64,11 @@
     
 <div class="container posts-content">
 <a href="{{url('post')}}" class="w-70 btn btn-primary mb-4"> post </a>
+<a href="{{url('logout') }}" class="btn btn-danger float-end"> logout</a>
+
 
     <div class="row" id="post_image">
+
 </div>
 </div>
 
@@ -116,15 +119,15 @@
                 <div class="media mb-3">
                   <img src="https://bootdey.com/img/Content/avatar/avatar3.png" class="d-block ui-w-40 rounded-circle" alt="">
                   <div class="media-body ml-3">
-                    Kenneth Frazier
-                    <div class="text-muted small">3 days ago</div>
+                    `+element.getuser.name+`
+                    <div class="text-muted small">`+element.created_at+`</div>
                   </div>
                 </div>
             
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus finibus commodo bibendum. Vivamus laoreet blandit odio, vel finibus quam dictum ut.
                 </p>
-                <a href="javascript:void(0)" class="ui-rect ui-bg-cover" style="background-image: url('`+image_url+`');"></a>
+                <a href="javascript:void(0)" class="ui-rect ui-bg-cover" style="background-image: url('`+image_url+`'); width='100px'; height='100px';"></a>
               </div>
               <div class="card-footer">
                 <a href="javascript:void(0)" onclick="image_like(`+element.id+`)" class="d-inline-block text-muted">

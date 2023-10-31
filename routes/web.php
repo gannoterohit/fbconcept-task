@@ -29,7 +29,7 @@ Route::post('/add-registration',[AuthController::class,'registration_add']);
 Route::get('/login',[AuthController::class,'show_login']);
 Route::post('/add-login',[AuthController::class,'login_add']);
 
-Route::post('/logout', [AuthController::class, 'logout']);
+Route::get('/logout', [AuthController::class, 'logout']);
 
 Route::post('post-image',[PostController::class,'post_image']);
 Route::get('post',[PostController::class,'post']);

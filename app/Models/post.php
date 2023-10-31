@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+Use Carbon\Carbon;
 
 class post extends Model
 {
@@ -15,4 +16,12 @@ class post extends Model
         'image',
         'like_count',
     ];
+
+    function getuser(){
+        return $this->hasOne(User::class,'id','user_id');
+     }
+     public function getCreatedAtAttribute($value)
+    {
+        return Carbon::parse($value)->format('d-M-Y H:i:s');
+}
 }

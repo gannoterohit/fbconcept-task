@@ -40,7 +40,7 @@ class PostController extends Controller
 
         public function get_post(request $request){
 
-            $data = post::orderBy('like_count', 'desc')
+            $data = post::with('getuser')->orderBy('like_count', 'desc')
             ->get();            
 
         
